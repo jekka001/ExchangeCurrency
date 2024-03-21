@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet logicalFilePath="1-create-tables"
+               id="1-create-currency-table" author="y.z.">
+        <comment>create currency table</comment>
+        <sql>
+            CREATE TABLE "currency"
+            (
+                id           serial         NOT NULL,
+                name         varchar(50)    NOT NULL,
+                rate         decimal(13, 2) NOT NULL,
+                numeric_code  numeric(4)     NOT NULL,
+                currency_code varchar(10)    NOT NULL,
+                exchange_date varchar(20)      NOT NULL,
+                exchange_time varchar(20)      NOT NULL,
+                CONSTRAINT exchange_pk PRIMARY KEY (id)
+            );
+        </sql>
+    </changeSet>
+
+    <changeSet logicalFilePath="1-create-tables"
+               id="2-create-index-in-currency" author="y.z.">
+        <comment>create index in currency</comment>
+        <sql>
+            CREATE INDEX date ON "currency" (exchange_date);
+        </sql>
+    </changeSet>
+
+</databaseChangeLog>

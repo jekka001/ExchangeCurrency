@@ -1,0 +1,97 @@
+{
+	"info": {
+		"_postman_id": "558703bd-b298-4d45-8cc8-b193496bc60a",
+		"name": "exchange_project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8178445",
+		"_collection_link": "https://interstellar-zodiac-636728.postman.co/workspace/Team-Workspace~becddc86-3ea2-41ee-8945-1fd4f60f266d/collection/8178445-558703bd-b298-4d45-8cc8-b193496bc60a?action=share&source=collection_link&creator=8178445"
+	},
+	"item": [
+		{
+			"name": "ExchangeToday",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/currency/today",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"currency",
+						"today"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "exhangeByDate",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "date",
+							"value": "21.03.2024",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/currency/date",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"currency",
+						"date"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteExchangeByDate",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "date",
+							"value": "21.03.2024",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/currency/delete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"currency",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
